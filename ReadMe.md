@@ -32,7 +32,9 @@ DevGigs is a Laravel-based web application designed to connect employers and dev
 
 1.  **Clone the Repository:**
 
-git clone https://github.com/joshosas/DevGigs.git 2. **Install Dependencies**
+git clone https://github.com/joshosas/DevGigs.git
+
+2. **Install Dependencies**
 
     cd DevGigs
     composer install
