@@ -31,39 +31,39 @@ DevGigs is a Laravel-based web application designed to connect employers and dev
 ## Installation
 
 1.  **Clone the Repository:**
-    `bash
-git clone https://github.com/joshosas/DevGigs.git
-`
-    Install Dependencies
 
-            cd DevGigs
-            composer install
+git clone https://github.com/joshosas/DevGigs.git 2. **Install Dependencies**
 
-            Set Up Environment:
+    cd DevGigs
+    composer install
 
-            Copy the .env.example file to .env and configure your database settings.
+3. **Set Up Environment:**
 
-            Generate Application Key:
+-   Copy the .env.example file to .env and configure your database settings.
 
-            php artisan key:generate
+4. **Generate Application Key:**
 
-            Run Migrations:
+    php artisan key:generate
 
-            php artisan migrate
+5. **Run Migrations:**
 
-            Start Development Server:
+    php artisan migrate
 
-            php artisan serve
+6. **Start Development Server:**
 
-            Visit the Application:
+    php artisan serve
 
-            Open your browser and go to http://localhost:8000 to access DevGigs.
+7. **Visit the Application:**
 
-            Contributing
-            If you'd like to contribute to DevGigs, please follow our Contribution Guidelines.
+Open your browser and go to http://localhost:8000 to access DevGigs.
 
-            License
-            The Laravel framework is open-sourced software licensed under [the MIT license](https://opensource.org/licenses/MIT).
+## Contributing
+
+If you'd like to contribute to DevGigs, please follow our Contribution Guidelines.
+
+## License
+
+The Laravel framework is open-sourced software licensed under [the MIT license](https://opensource.org/licenses/MIT).
 
 ## About Laravel
 
