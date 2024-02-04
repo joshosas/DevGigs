@@ -13,7 +13,7 @@ class ListingController extends Controller
     {
         // dd(request('tag'));
         return view('pages.index', [
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
         ]);
     }
 
@@ -47,6 +47,6 @@ class ListingController extends Controller
 
         Listing::create($formFields);
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Listing created successfully');
     }
 }
