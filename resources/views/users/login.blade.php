@@ -23,7 +23,7 @@
                 <input type="password" class="border border-gray-200 rounded p-2 w-full pr-10" name="password" id="password" value="{{ old('password') }}" />
 
                 <div class="relative flex items-center">
-                    <button type="button" id="togglePassword" class="text-gray-500 absolute right-2 focus:outline-none">
+                    <button type="button" id="togglePassword" class="text-gray-500 absolute bottom-2 right-2 focus:outline-none">
                         <i class="far fa-eye"></i>
                     </button>
                 </div>
