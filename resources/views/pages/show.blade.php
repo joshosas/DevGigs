@@ -33,11 +33,26 @@
                         <a href="{{$listing->email}}" class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"><i class="fa-solid fa-envelope"></i>
                             Contact Employer</a>
 
-                        <a href="{{$listing->website}}" target="_blank" class="block bg-black text-white py-2 rounded-xl hover:opacity-80"><i class="fa-solid fa-globe"></i>{{$listing->website}}</a>
+                        <a href="{{$listing->website}}" target="_blank" class="block bg-black text-white py-2 rounded-xl hover:opacity-80"><i class="fa-solid fa-globe"></i>Visit Website</a>
                     </div>
                 </div>
             </div>
         </x-card>
+
+        <x-card class="mt-4 p-2 flex space-x-6">
+            <a href="/listings/{{$listing->id}}/edit">
+                <i class="fa-solid fa-pencil me-1"></i>Edit
+            </a>
+
+            <form action="/listings/{{$listing->id}}" method="POST" onsubmit="return confirm('Are you sure you want to delete this Gig?')">
+                @csrf
+                @method('DELETE')
+                <button class=" text-red-500">
+                    <i class="fa-solid fa-trash"></i>Delete
+                </button>
+            </form>
+        </x-card>
+
     </div>
 
 </x-layout>

@@ -40,7 +40,7 @@ class ListingController extends Controller
             'location' => 'required',
             'email' => ['required', 'email'],
             'tags' => 'required',
-            'website' => 'active url',
+            'website' => 'required',
             'description' => 'required'
 
         ]);
@@ -52,5 +52,44 @@ class ListingController extends Controller
         Listing::create($formFields);
 
         return redirect('/')->with('message', 'Listing created successfully');
+    }
+
+    // SHOW UPDATE FORM
+    public function edit(Listing $listing)
+    {
+        return view('pages.edit', ['listing' => $listing]);
+    }
+
+    // UPDATE LISTING
+    public function update(Request $request, Listing $listing)
+    {
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => 'required',
+            'location' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'website' => 'required',
+            'description' => 'required'
+
+        ]);
+
+        if ($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        $listing->update($formFields);
+
+        return view('pages.show', [
+            'listing' => $listing
+        ])->with('message', 'Listing Updated successfully');
+    }
+
+    // DELETE LISTING
+    public function destroy(Listing $listing)
+    {
+        $listing->delete();
+
+        return redirect('/')->with('message', 'Listing deleted successfully');
     }
 }
