@@ -4,6 +4,7 @@ use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\WeatherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,13 @@ use App\Http\Controllers\ListingController;
 // update - Update listing
 // destroy - Delete listing  
 
+// LISTINGS ROUTES
 
 // All Listings
 Route::get('/', [ListingController::class, 'index']);
+
+// Show Weather
+Route::get('/weather', [WeatherController::class, 'index']);
 
 // Show Create Listing
 Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
@@ -44,6 +49,16 @@ Route::put('/listings/{listing}', [ListingController::class, 'update'])->middlew
 // Delete Listing
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
+// Manage Listings
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
+// Single Listings
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
+
+
+// USER CONTROLL ROUTES
+
 // Show Register
 Route::get('/register', [UserController::class, 'register'])->middleware('guest');
 
@@ -59,6 +74,3 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
-
-// Single Listings
-Route::get('/listings/{listing}', [ListingController::class, 'show']);

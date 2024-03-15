@@ -26,7 +26,12 @@ DevGigs is a Laravel-based web application designed to connect employers and dev
     -   Laravel's Eloquent ORM is employed for smooth database interactions, making it easy to fetch, store, and manipulate data.
 
 -   **Blade Templates:**
+
     -   Frontend views are crafted using Laravel's Blade templating engine, providing a clean and efficient way to structure frontend code.
+
+-   **Weather API Integration:**
+
+    -   Integrated with Open Meteo API to provide current weather information for users.
 
 ## Installation
 
