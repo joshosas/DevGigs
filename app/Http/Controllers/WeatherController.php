@@ -16,7 +16,7 @@ class WeatherController extends Controller
         $this->openMeteoService = $openMeteoService;
     }
 
-    public function index(Request $request)
+    public function weather(Request $request)
     {
         $latitude = $request->input('latitude', 52.52);
         $longitude = $request->input('longitude', 13.41);

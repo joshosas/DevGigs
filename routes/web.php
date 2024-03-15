@@ -32,7 +32,7 @@ use App\Http\Controllers\WeatherController;
 Route::get('/', [ListingController::class, 'index']);
 
 // Show Weather
-Route::get('/weather', [WeatherController::class, 'index']);
+Route::get('/weather', [WeatherController::class, 'weather']);
 
 // Show Create Listing
 Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
